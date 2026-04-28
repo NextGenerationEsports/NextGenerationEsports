@@ -113,31 +113,31 @@ export function HeroSection() {
             Become a Partner
           </Link>
         </motion.div>
-      </div>
 
-      {/* Scroll indicator */}
-      <motion.button
-        type="button"
-        onClick={scrollToRosters}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        whileHover={{ y: -2 }}
-        whileTap={{ scale: 0.98 }}
-        className="absolute bottom-4 left-1/2 z-10 flex w-[5.5rem] -translate-x-1/2 flex-col items-center gap-1.5 text-center md:bottom-6"
-      >
-        <span className="block w-full pl-[0.35em] text-center text-[10px] font-semibold uppercase tracking-[0.35em] text-muted-foreground">
-          Scroll
-        </span>
-        <div className="relative flex h-11 w-full items-start justify-center overflow-hidden">
-          <span className="absolute top-0 h-full w-px bg-gradient-to-b from-primary via-primary/70 to-transparent" />
-          <motion.span
-            animate={{ y: [0, 14, 0], opacity: [0.35, 1, 0.35] }}
-            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-0 h-2.5 w-2.5 rounded-full bg-primary shadow-[0_0_14px_rgba(124,58,237,0.6)]"
-          />
-        </div>
-      </motion.button>
+        {/* Scroll indicator */}
+        <motion.button
+          type="button"
+          onClick={scrollToRosters}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.98 }}
+          className="mt-12 flex w-24 flex-col items-center gap-2 self-center text-center"
+        >
+          <span className="block w-full text-center text-[10px] font-semibold uppercase tracking-[0.35em] text-muted-foreground">
+            Scroll
+          </span>
+          <div className="relative flex h-12 w-full items-start justify-center overflow-hidden">
+            <span className="absolute top-0 h-full w-px bg-gradient-to-b from-primary via-primary/70 to-transparent" />
+            <motion.span
+              animate={{ y: [0, 14, 0], opacity: [0.35, 1, 0.35] }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-0 h-2.5 w-2.5 rounded-full bg-primary shadow-[0_0_14px_rgba(124,58,237,0.6)]"
+            />
+          </div>
+        </motion.button>
+      </div>
     </section>
   );
 }
