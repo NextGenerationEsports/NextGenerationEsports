@@ -1,0 +1,382 @@
+You are a senior frontend developer and motion designer. 
+I want you to use the existing website template in this project and rebuild it into a professional esports organization website for:
+
+Next Generation Esports
+
+Important:
+- Keep the same overall style, layout feeling, animation quality, transition behavior, hover effects, sliders, page rhythm, and premium esports look of the current template.
+- Use Cloud9.gg only as a structural/style reference for navigation, sections, team pages, partners showcase, news/store feel, and animated esports presentation. Do not copy Cloud9 branding, text, colors, or assets.
+- Make the website fully dedicated to Next Generation Esports.
+- Use a dark esports visual identity: black, deep purple, white, subtle neon purple glow, premium competitive look.
+- The design should feel clean, fast, animated, modern, sponsor-friendly, and professional.
+
+Assets:
+- The main Next Generation Esports logo is inside the folder named: white
+- Use the logo from the white folder as the main website logo in navbar, hero, loading screen, footer, and favicon if possible.
+- Use all other logo assets in the project as partner logos.
+- For game logos, use available game logo assets if they exist. If they do not exist, create a clean placeholder system using simple icons/cards and leave clear comments where I can replace them later.
+- Do not distort logos. Keep aspect ratio and use contain/object-fit.
+
+Website Structure:
+
+1. Navbar
+Create a premium animated navbar similar in behavior to a major esports org website.
+Navbar items:
+- Home
+- About
+- Teams
+- Partners
+- Store
+- News
+- Links
+
+Navbar behavior:
+- Sticky / fixed top navbar.
+- Smooth scroll or route navigation.
+- Animated dropdown / mega menu for About.
+- Animated dropdown / mega menu for Teams.
+- Animated dropdown / mega menu for Partners.
+- Store tab should be visible even if the store page is currently placeholder.
+- Mobile responsive hamburger menu with smooth open/close animation.
+
+2. About dropdown / slider
+The About section should contain these slides/items:
+- About NG
+- Achievements
+- Talent
+- Careers
+- News
+- Nimbus
+- Links
+
+Note:
+The original reference says “About C9”, but this website is for Next Generation Esports, so rename it to “About NG”.
+
+Each About slide should have:
+- Big title
+- Short powerful subtitle
+- Animated background image/gradient
+- CTA button
+- Smooth slide transition
+- Hover animation
+- Optional small stat or highlight
+
+Suggested content:
+About NG:
+“Next Generation Esports is a competitive Egyptian esports organization built to develop players, create culture, and connect brands with the future of gaming.”
+
+Achievements:
+“Titles, podiums, community impact, and competitive milestones built from passion and discipline.”
+
+Talent:
+“Players, creators, staff, and rising stars shaping the next generation of esports.”
+
+Careers:
+“Join the team behind the team. Build content, operations, events, media, and competitive success.”
+
+News:
+“Latest announcements, roster updates, partnerships, match results, and community stories.”
+
+Nimbus:
+“Create this as a premium internal/fan identity section. Make it feel mysterious and futuristic. It can represent the NG digital hub, fan club, or future platform.”
+
+Links:
+“Social links, contact links, sponsor deck links, and community channels.”
+
+3. Hero Section
+Create a cinematic homepage hero.
+Hero should include:
+- NG logo from white folder
+- Main headline:
+  “NEXT GENERATION ESPORTS”
+- Subheadline:
+  “Built for competition. Designed for culture. Ready for the future.”
+- CTA buttons:
+  “Explore Teams”
+  “Become a Partner”
+- Animated background with purple/black esports energy
+- Subtle particles, glow, gradient, or moving shapes
+- Smooth entrance animations for logo, headline, buttons
+- Optional large faded NG mark in the background
+
+4. Main Page Sections
+
+A. Teams Preview Slider
+Title:
+“Meet Our Teams”
+
+Teams to include:
+- LOL
+- Valorant
+- CrossFire
+- Fortnite
+- FC2026
+- Tekken 8
+
+Each team card should include:
+- Game logo beside the game name
+- Short tagline
+- Animated hover effect
+- Button: “View Roster”
+- Link to a dedicated page for that game
+
+Team page routes:
+- /teams/lol
+- /teams/valorant
+- /teams/crossfire
+- /teams/fortnite
+- /teams/fc2026
+- /teams/tekken-8
+
+B. Partners Logo Slider
+Create an animated infinite horizontal slider / marquee on the main page showing partner logos.
+Requirements:
+- Use all partner logos from the available assets except the main NG logo.
+- Smooth infinite animation.
+- Pause on hover.
+- Logo cards should have glassmorphism or dark card style.
+- Add a heading:
+  “Trusted By Our Partners”
+- Add CTA:
+  “Explore Partners”
+
+C. Partners Section Preview
+Show partner cards with:
+- Partner logo
+- Partner name
+- Short description placeholder
+- Category badge like: Sponsor, Venue Partner, Media Partner, Technology Partner, Community Partner
+- Button: “View Partner”
+
+D. Achievements Preview
+Create a section similar to an esports history/champions section.
+Title:
+“Home of the Next Generation”
+Show achievement cards with icons:
+- Trophy icon
+- Medal icon
+- Star icon
+- Community icon
+- Controller icon
+
+Use placeholder achievements but make them editable:
+- “ESS 2025 Champions”
+- “Built with zero-budget passion”
+- “Egyptian esports community presence”
+- “Competitive rosters across multiple titles”
+- “Brand-ready content and activations”
+
+E. Store Preview
+Create a Store tab/page and homepage preview.
+If products are not available, make it a premium coming soon section:
+Title:
+“NG Store”
+Subtitle:
+“Official team wear, jerseys, and limited drops coming soon.”
+Cards:
+- Pro Jersey
+- Hoodie
+- Player Kit
+- Community Drop
+Button:
+“Coming Soon”
+
+F. News Preview
+Create a news/blog preview section.
+Use placeholder cards:
+- “Next Generation Esports Announces New Competitive Direction”
+- “NG Expands Into Multiple Esports Titles”
+- “Partnership Opportunities Now Open”
+Each card should include:
+- Date
+- Category
+- Image placeholder or gradient card
+- Read More button
+
+5. Dedicated Team Pages
+
+For each game page, create a full page with:
+- Game logo beside title
+- Hero section for the game
+- Roster/player grid
+- Player photos
+- Player name
+- Role
+- Country/flag placeholder
+- Social icon placeholders
+- Achievements section under the photos with icons
+
+Pages:
+LOL page:
+- Route: /teams/lol
+- Title: “League of Legends”
+- Placeholder players:
+  Player 1 - Top
+  Player 2 - Jungle
+  Player 3 - Mid
+  Player 4 - ADC
+  Player 5 - Support
+
+Valorant page:
+- Route: /teams/valorant
+- Placeholder players:
+  Player 1 - Duelist
+  Player 2 - Initiator
+  Player 3 - Controller
+  Player 4 - Sentinel
+  Player 5 - Flex
+
+CrossFire page:
+- Route: /teams/crossfire
+- Placeholder players:
+  Player 1 - Rifler
+  Player 2 - Sniper
+  Player 3 - Entry
+  Player 4 - Support
+  Player 5 - Captain
+
+Fortnite page:
+- Route: /teams/fortnite
+- Placeholder players:
+  Player 1 - IGL
+  Player 2 - Fragger
+  Player 3 - Builder
+  Player 4 - Support
+
+FC2026 page:
+- Route: /teams/fc2026
+- Placeholder players:
+  Player 1 - Main Player
+  Player 2 - Substitute
+  Player 3 - Coach
+
+Tekken 8 page:
+- Route: /teams/tekken-8
+- Placeholder players:
+  Player 1 - Main Fighter
+  Player 2 - Secondary Fighter
+  Player 3 - Coach
+
+Team page achievements:
+Under the roster photos, add “Achievements” with animated icon cards.
+Use editable placeholder examples:
+- Champion title
+- Top placement
+- Major qualification
+- Community tournament win
+- MVP award
+- Roster milestone
+
+6. Partners Page
+Create a full Partners page:
+Route: /partners
+
+Page sections:
+- Partners hero
+- Grid of partner cards
+- Logo beside partner name
+- Partner category badge
+- Short partnership description
+- CTA section:
+  “Partner With Next Generation Esports”
+  Button: “Contact Us”
+
+Use all partner logos from the project assets.
+Partner cards should animate on scroll.
+
+7. Store Page
+Route: /store
+Create a clean coming soon ecommerce-style page:
+- Hero
+- Product cards
+- Jersey / Hoodie / Kit / Accessories placeholders
+- “Coming Soon” labels
+- Newsletter/contact CTA
+
+8. About Pages
+Create individual routes or sections for:
+- /about
+- /achievements
+- /talent
+- /careers
+- /news
+- /nimbus
+- /links
+
+Keep the same visual style and animation.
+
+9. Footer
+Create a professional footer with:
+- NG logo
+- Short description:
+  “Next Generation Esports — competing, creating, and building the future of esports.”
+- Navigation links
+- Teams links
+- Partners link
+- Store link
+- Social icons placeholders
+- Copyright:
+  “© 2026 Next Generation Esports. All Rights Reserved.”
+
+10. Animation Requirements
+Use the same animation style as the provided template.
+Add:
+- Smooth page transitions
+- Scroll reveal animations
+- Hover glow on cards
+- Animated dropdowns
+- Infinite partner logo marquee
+- Team card hover expansion
+- Button magnetic/scale effect
+- Subtle background movement
+- Loading animation using NG logo if possible
+
+11. Technical Requirements
+- Keep the code clean and organized.
+- Use reusable components:
+  Navbar
+  Footer
+  Hero
+  TeamCard
+  PlayerCard
+  PartnerCard
+  AchievementCard
+  LogoSlider
+  NewsCard
+  StoreCard
+- Create a central data file for:
+  teams
+  players
+  partners
+  achievements
+  news
+  storeItems
+This makes it easy to edit later.
+- Make sure all routes work.
+- Make sure the website is responsive on desktop, tablet, and mobile.
+- Make sure animations do not break performance.
+- Optimize images and use lazy loading where possible.
+- Keep accessibility in mind: alt text, readable contrast, keyboard navigation.
+
+12. Final Output
+After editing, provide:
+- Summary of what was changed
+- Folder/file structure
+- Where I can change players, partners, achievements, and logos
+- Any missing assets that I need to add manually
+- How to run the project locally
+- How to deploy it
+
+Extra Visual & Animation Requirements:
+- I want the website to feel highly modern, premium, and futuristic.
+- All animations should be modern, smooth, and polished, not basic or outdated.
+- Use clean micro-interactions everywhere: hover states, card movement, button transitions, logo reveals, dropdown motion, page transitions, and scroll-based reveals.
+- The animation style should feel like a premium esports organization website, with subtle neon energy, smooth easing, and professional motion design.
+- Avoid messy, exaggerated, cartoonish, or overly heavy animations.
+- Every animation must feel intentional and sponsor-friendly.
+- All icons must be minimalist, clean, thin-line or simple filled icons.
+- Avoid colorful, childish, bulky, or overly detailed icons.
+- Icons should match the dark purple/black/white identity.
+- Use a consistent icon style across the full website.
+- Use minimalist icons for achievements, players, partners, careers, store, news, and social links.
+- Keep the UI clean with enough spacing, modern typography, glassmorphism cards, soft glows, and premium hover effects.
