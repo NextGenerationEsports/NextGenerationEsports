@@ -48,11 +48,21 @@ export default function ManagementPage() {
               className="group relative rounded-lg bg-[#0d0d14] border border-white/[0.06] p-6 hover:border-primary/20 transition-colors"
               data-testid={`mgmt-card-${member.id}`}
             >
-              {/* Avatar placeholder */}
-              <div className="w-14 h-14 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-5">
-                <span className="font-display font-black text-2xl text-primary/70">
-                  {member.name.charAt(0)}
-                </span>
+              {/* Avatar — shows photo if available, otherwise shows initial letter */}
+              <div className="w-16 h-16 rounded-lg overflow-hidden border border-primary/20 mb-5 flex-shrink-0">
+                {(member as { photo?: string }).photo ? (
+                  <img
+                    src={(member as { photo?: string }).photo}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-primary/10 flex items-center justify-center">
+                    <span className="font-display font-black text-2xl text-primary/70">
+                      {member.name.charAt(0)}
+                    </span>
+                  </div>
+                )}
               </div>
 
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-1">

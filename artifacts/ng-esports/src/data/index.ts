@@ -16,7 +16,10 @@ export const socialLinks = {
 // EDIT: Replace placeholder names with real staff names, roles, and bios.
 // ──────────────────────────────────────────────────────────────────────────────
 export const management = [
-  { id: "mgmt-1", name: "NG Management", role: "Executive Management", bio: "Leading the organization's vision, strategy, and competitive direction across all titles." },
+  // EDIT: Update name, role, bio, and photo for each management member.
+  //       Set photo to a path in /public (e.g. "/mgmt-name.jpg") to show a real photo.
+  //       Leave photo empty ("") to show the initial-letter avatar placeholder instead.
+  { id: "mgmt-1", name: "NG Management", role: "Executive Management", photo: "/mgmt-ng-management.jpg", bio: "Leading the organization's vision, strategy, and competitive direction across all titles." },
   { id: "mgmt-2", name: "Operations Lead", role: "Operations & Logistics", bio: "Overseeing day-to-day operations, player welfare, scheduling, and tournament coordination." },
   { id: "mgmt-3", name: "Content Director", role: "Content & Media", bio: "Driving all creative output, social media presence, and brand storytelling for NG." },
   { id: "mgmt-4", name: "Partnerships Manager", role: "Partnerships & Sponsorships", bio: "Building brand relationships and securing sponsorships to support the org's growth." },
