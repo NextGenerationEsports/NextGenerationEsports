@@ -50,7 +50,7 @@ export function HeroSection() {
           className="mb-8"
         >
           <img
-            src="/ng-icon.png"
+            src={`${import.meta.env.BASE_URL}ng-icon.png`}
             alt="NG Logo"
             className="w-24 md:w-32 h-auto mx-auto drop-shadow-[0_0_15px_rgba(124,58,237,0.5)]"
           />
@@ -108,17 +108,18 @@ export function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
+      <motion.a
+        href="#home-rosters"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
+        className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-center"
       >
-        <span className="text-xs uppercase tracking-widest text-muted-foreground font-semibold">
+        <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent" />
+        <span className="text-[10px] font-semibold uppercase tracking-[0.35em] text-muted-foreground">
           Scroll
         </span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent" />
-      </motion.div>
+      </motion.a>
     </section>
   );
 }

@@ -39,7 +39,7 @@ export function LoadingScreen() {
 
             {/* EDIT: Replace ng-icon.png in /public to change the loading logo */}
             <img
-              src="/ng-icon.png"
+              src={`${import.meta.env.BASE_URL}ng-icon.png`}
               alt="Next Generation Esports"
               className="w-28 h-auto relative z-10 drop-shadow-[0_0_30px_rgba(124,58,237,0.8)]"
             />

@@ -80,7 +80,7 @@ export function Navbar() {
         ─────────────────────────────────────────────────────────────────── */}
         <Link href="/" className="flex items-center gap-3 z-50 group">
           <img
-            src="/ng-icon.png"
+              src={`${import.meta.env.BASE_URL}ng-icon.png`}
             alt="NG Logo"
             className="h-8 w-auto group-hover:drop-shadow-[0_0_8px_rgba(124,58,237,0.8)] transition-all"
           />

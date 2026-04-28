@@ -14,7 +14,7 @@ export default function Home() {
       <HeroSection />
 
       {/* Teams Preview */}
-      <section className="py-24 relative container mx-auto px-4 md:px-6">
+      <section id="home-rosters" className="py-24 relative container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
           <div>
             <h2 className="font-display font-bold text-4xl md:text-5xl uppercase tracking-tight mb-2">Our Rosters</h2>

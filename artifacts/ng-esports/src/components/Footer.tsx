@@ -25,7 +25,7 @@ export function Footer() {
           ─────────────────────────────────────────────────────────────────── */}
           <div>
             <Link href="/" className="inline-block mb-5">
-              <img src="/ng-icon.png" alt="NG Esports" className="h-10 w-auto" />
+            <img src={`${import.meta.env.BASE_URL}ng-icon.png`} alt="NG Esports" className="h-10 w-auto" />
             </Link>
             <p className="text-white/40 text-sm leading-relaxed mb-6 max-w-xs">
               Next Generation Esports — competing, creating, and building the future of esports.

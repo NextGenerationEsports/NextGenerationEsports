@@ -32,7 +32,7 @@ export default function Links() {
         >
           {/* EDIT: Replace ng-icon.png in /public to change the logo shown here */}
           <img
-            src="/ng-icon.png"
+            src={`${import.meta.env.BASE_URL}ng-icon.png`}
             alt="NG"
             className="w-16 h-auto mx-auto mb-8 drop-shadow-[0_0_16px_rgba(124,58,237,0.5)]"
           />

@@ -4,7 +4,6 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  // @replit
   // Whitespace-nowrap: Badges should never wrap.
   "whitespace-nowrap inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2" +
   " hover-elevate ",
@@ -12,16 +11,17 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default:
-          // @replit shadow-xs instead of shadow, no hover because we use hover-elevate
+          // Use a lighter shadow because hover elevation already provides depth.
           "border-transparent bg-primary text-primary-foreground shadow-xs",
         secondary:
-          // @replit no hover because we use hover-elevate
+          // Keep the base state clean because hover elevation already handles motion.
           "border-transparent bg-secondary text-secondary-foreground",
         destructive:
-          // @replit shadow-xs instead of shadow, no hover because we use hover-elevate
+          // Match the lighter default shadow for consistent elevation.
           "border-transparent bg-destructive text-destructive-foreground shadow-xs",
-          // @replit shadow-xs" - use badge outline variable
-        outline: "text-foreground border [border-color:var(--badge-outline)]",
+        outline:
+          // Use the shared outline token so badges stay consistent with the theme.
+          "text-foreground border [border-color:var(--badge-outline)]",
       },
     },
     defaultVariants: {
