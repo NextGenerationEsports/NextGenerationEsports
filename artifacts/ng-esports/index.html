@@ -3,14 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="description" content="Next Generation Esports — Egypt's premier esports organization competing across LoL, Tekken 8, Fortnite, FC 2026, Valorant, and CrossFire." />
     <title>Next Generation Esports</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+    <!-- Fonts: Rajdhani (display headings) + Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+      GitHub Pages SPA — restore redirect.
+      The 404.html page stores the original URL in sessionStorage.
+      This script reads it back and uses history.replaceState so
+      the React router (wouter) sees the correct path on load.
+    -->
+    <script>
+      (function () {
+        var redirect = sessionStorage.getItem("ng_redirect");
+        if (redirect) {
+          sessionStorage.removeItem("ng_redirect");
+          if (redirect !== location.href) {
+            history.replaceState(null, null, redirect);
+          }
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="./src/main.tsx"></script>
   </body>
 </html>
