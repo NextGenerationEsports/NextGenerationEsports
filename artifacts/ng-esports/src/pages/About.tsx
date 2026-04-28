@@ -13,7 +13,7 @@ export default function About() {
           <h1 className="font-display font-bold text-5xl md:text-7xl uppercase tracking-tight mb-6">
             About <span className="text-primary">NG</span>
           </h1>
-          
+
           <div className="w-24 h-1 bg-primary mb-12" />
 
           <div className="space-y-16">
@@ -21,7 +21,7 @@ export default function About() {
               <h2 className="font-display font-bold text-3xl mb-6 uppercase text-white/90">Our Mission</h2>
               <div className="prose prose-invert prose-lg">
                 <p className="text-muted-foreground leading-relaxed">
-                  Next Generation Esports (NG) was founded with a singular purpose: to elevate the competitive gaming ecosystem in Egypt and the MENA region. We believe in creating pathways for local talent to shine on global stages, combining world-class infrastructure with unapologetic passion.
+                  Next Generation Esports (NG) was established with a singular purpose: to elevate the competitive gaming ecosystem in Egypt and the MENA region. We believe in creating pathways for local talent to shine on global stages, combining world-class infrastructure with unapologetic passion.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   We are more than just a collection of teams; we are a culture brand bridging the gap between gaming, lifestyle, and elite performance.
@@ -48,18 +48,18 @@ export default function About() {
               <div className="border-l-2 border-primary/30 pl-8 space-y-8 relative">
                 <div className="relative">
                   <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-primary ring-4 ring-background" />
-                  <h3 className="font-display font-bold text-2xl text-white">2023</h3>
-                  <p className="text-muted-foreground mt-2">Founded in Cairo. Initial rosters in League of Legends and CrossFire.</p>
+                  <h3 className="font-display font-bold text-2xl text-white">Sep 2025</h3>
+                  <p className="text-muted-foreground mt-2">Next Generation Esports established in Cairo. Initial rosters formed across League of Legends, Tekken 8, and Fortnite.</p>
                 </div>
                 <div className="relative">
                   <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-primary ring-4 ring-background" />
-                  <h3 className="font-display font-bold text-2xl text-white">2024</h3>
-                  <p className="text-muted-foreground mt-2">Expanded into Valorant and Fortnite. Opened the first NG performance facility.</p>
+                  <h3 className="font-display font-bold text-2xl text-white">Late 2025</h3>
+                  <p className="text-muted-foreground mt-2">Crowned ESS 2025 Champions. Expanded into FC 2026 and Valorant. Partnered with up2 production and Toxic Gaming as our official gaming house.</p>
                 </div>
                 <div className="relative">
                   <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-primary ring-4 ring-background" />
-                  <h3 className="font-display font-bold text-2xl text-white">2025</h3>
-                  <p className="text-muted-foreground mt-2">Crowned ESS Champions. Secured multi-year title partnership with Nimbus Digital.</p>
+                  <h3 className="font-display font-bold text-2xl text-white">2026</h3>
+                  <p className="text-muted-foreground mt-2">Insomnia Egypt 2026 — multiple titles swept across Fortnite and FC 2026. LoL team enters AL Division 2. NG becomes a leading Egyptian esports organization.</p>
                 </div>
               </div>
             </section>

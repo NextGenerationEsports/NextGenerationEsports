@@ -1,15 +1,17 @@
 import { motion } from "framer-motion";
-import { Twitter, Youtube, Instagram, MessageSquare, Twitch, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, ExternalLink } from "lucide-react";
+import { FaXTwitter, FaInstagram, FaFacebook, FaTiktok, FaYoutube } from "react-icons/fa6";
+import { socialLinks } from "@/data";
+
+const links = [
+  { id: "twitter",   name: "X (Twitter)",  url: socialLinks.twitter,   icon: FaXTwitter,  handle: "@Nex1Generation",             color: "#e7e7e7" },
+  { id: "instagram", name: "Instagram",     url: socialLinks.instagram, icon: FaInstagram, handle: "@Nex1Generation",             color: "#E1306C" },
+  { id: "facebook",  name: "Facebook",      url: socialLinks.facebook,  icon: FaFacebook,  handle: "Next Generation Esports",     color: "#1877F2" },
+  { id: "tiktok",    name: "TikTok",        url: socialLinks.tiktok,    icon: FaTiktok,    handle: "@nex1generation",             color: "#e7e7e7" },
+  { id: "youtube",   name: "YouTube",       url: socialLinks.youtube,   icon: FaYoutube,   handle: "@nex1generation",             color: "#FF0000" },
+];
 
 export default function Links() {
-  const socialLinks = [
-    { id: "twitter", name: "Twitter", url: "#", icon: Twitter, handle: "@NG_Esports" },
-    { id: "youtube", name: "YouTube", url: "#", icon: Youtube, handle: "NGEsportsTV" },
-    { id: "instagram", name: "Instagram", url: "#", icon: Instagram, handle: "@ng.esports" },
-    { id: "discord", name: "Discord", url: "#", icon: MessageSquare, handle: "discord.gg/ng" },
-    { id: "twitch", name: "Twitch", url: "#", icon: Twitch, handle: "NGEsports" },
-  ];
-
   return (
     <div className="min-h-screen bg-background pt-32 pb-24">
       <div className="container mx-auto px-4 md:px-6">
@@ -17,16 +19,17 @@ export default function Links() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center max-w-2xl mx-auto"
+          className="mb-14 text-center max-w-2xl mx-auto"
         >
-          <img src="/ng-logo-white.png" alt="NG" className="w-20 h-auto mx-auto mb-8 drop-shadow-[0_0_10px_rgba(124,58,237,0.5)]" />
-          <h1 className="font-display font-bold text-5xl uppercase tracking-tight mb-4">
+          <img src="/ng-logo-white.png" alt="NG" className="w-16 h-auto mx-auto mb-8 drop-shadow-[0_0_16px_rgba(124,58,237,0.5)]" />
+          <h1 className="font-display font-black text-5xl uppercase tracking-tight mb-2">
             Connect <span className="text-primary">With Us</span>
           </h1>
+          <p className="text-white/35 text-sm mt-3">Follow NG across every platform.</p>
         </motion.div>
 
-        <div className="max-w-xl mx-auto space-y-4">
-          {socialLinks.map((link, index) => {
+        <div className="max-w-lg mx-auto space-y-3">
+          {links.map((link, index) => {
             const Icon = link.icon;
             return (
               <motion.a
@@ -34,35 +37,42 @@ export default function Links() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-center p-4 bg-card/50 border border-card-border rounded-xl hover:bg-primary/20 hover:border-primary/50 transition-all group"
+                transition={{ delay: index * 0.07 }}
+                className="flex items-center gap-4 p-4 bg-[#0d0d14] border border-white/[0.06] rounded-lg hover:border-white/[0.14] hover:bg-[#10101a] transition-all group"
+                data-testid={`links-${link.id}`}
               >
-                <div className="w-12 h-12 bg-card rounded-lg flex items-center justify-center mr-4 group-hover:text-primary transition-colors">
-                  <Icon size={24} />
+                <div
+                  className="w-10 h-10 rounded flex items-center justify-center flex-shrink-0 transition-opacity"
+                  style={{ background: `${link.color}12`, color: link.color }}
+                >
+                  <Icon size={18} />
                 </div>
-                <div className="flex-grow">
-                  <h3 className="font-bold text-lg">{link.name}</h3>
-                  <p className="text-muted-foreground text-sm">{link.handle}</p>
+                <div className="flex-grow min-w-0">
+                  <h3 className="font-bold text-sm text-white">{link.name}</h3>
+                  <p className="text-white/35 text-xs truncate">{link.handle}</p>
                 </div>
-                <span className="text-primary font-semibold opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
-                  Follow →
-                </span>
+                <ExternalLink size={13} className="text-white/20 group-hover:text-white/50 transition-colors flex-shrink-0" />
               </motion.a>
-            )
+            );
           })}
 
-          <div className="mt-12 grid grid-cols-2 gap-4">
-            <div className="bg-card/30 border border-card-border p-6 rounded-xl flex flex-col items-center text-center">
-              <Mail className="text-primary mb-3" size={24} />
-              <h4 className="font-bold mb-1">Business Inquiries</h4>
-              <p className="text-sm text-muted-foreground">contact@ng-esports.com</p>
-            </div>
-            <div className="bg-card/30 border border-card-border p-6 rounded-xl flex flex-col items-center text-center">
-              <MapPin className="text-primary mb-3" size={24} />
-              <h4 className="font-bold mb-1">HQ</h4>
-              <p className="text-sm text-muted-foreground">Cairo, Egypt</p>
+          {/* Contact info */}
+          <div className="pt-6 grid grid-cols-2 gap-3">
+            <a
+              href={socialLinks.email}
+              className="group flex flex-col items-center text-center p-5 bg-[#0d0d14] border border-white/[0.06] rounded-lg hover:border-primary/30 hover:bg-primary/5 transition-all"
+              data-testid="links-email"
+            >
+              <Mail size={20} className="text-primary mb-2 group-hover:scale-110 transition-transform" />
+              <h4 className="font-bold text-xs text-white mb-0.5">Email</h4>
+              <p className="text-[11px] text-white/35 break-all">nex1generationofficial@gmail.com</p>
+            </a>
+            <div className="flex flex-col items-center text-center p-5 bg-[#0d0d14] border border-white/[0.06] rounded-lg">
+              <MapPin size={20} className="text-primary mb-2" />
+              <h4 className="font-bold text-xs text-white mb-0.5">Location</h4>
+              <p className="text-[11px] text-white/35">Cairo, Egypt</p>
             </div>
           </div>
         </div>

@@ -52,7 +52,6 @@ export function Footer() {
                 ["Achievements", "/achievements"],
                 ["Talent", "/talent"],
                 ["Careers", "/careers"],
-                ["Nimbus", "/nimbus"],
               ].map(([label, href]) => (
                 <li key={href}>
                   <Link href={href} className="text-sm text-white/50 hover:text-white transition-colors">{label}</Link>

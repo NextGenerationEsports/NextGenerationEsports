@@ -38,7 +38,7 @@ export default function Partners() {
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
               Reach millions of highly engaged fans across MENA and the globe. Let's build something unforgettable together.
             </p>
-            <a href="mailto:partners@ng-esports.com" className="inline-block px-8 py-4 bg-white text-black font-bold uppercase tracking-wider rounded-lg hover:bg-primary hover:text-white hover:shadow-[0_0_20px_rgba(124,58,237,0.5)] transition-all">
+            <a href="mailto:nex1generationofficial@gmail.com" className="inline-block px-8 py-4 bg-white text-black font-bold uppercase tracking-wider rounded-lg hover:bg-primary hover:text-white hover:shadow-[0_0_20px_rgba(124,58,237,0.5)] transition-all">
               Contact Commercial Team
             </a>
           </div>

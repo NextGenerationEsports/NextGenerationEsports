@@ -149,13 +149,15 @@ export const partners = [
     logo: "/partner-hexagon.png",
     category: "Technology Partner",
     description: "Powering the next generation of digital infrastructure and content production for NG Esports.",
+    link: "https://x.com/Up2Production",
   },
   {
     id: "toxic",
     name: "Toxic Gaming",
     logo: "/partner-toxic-gaming.png",
-    category: "Apparel Partner",
-    description: "Official apparel and gear provider for all NG competitive rosters.",
+    category: "Apparel & Gaming House",
+    description: "Official apparel partner and the home of NG Esports. Toxic Gaming is our official Gaming House in Cairo — where the team trains, lives, and competes.",
+    link: "https://www.google.com/maps/search/TOXiC+Gaming/@30.0712788,31.516235,17z?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D",
   },
 ];
 

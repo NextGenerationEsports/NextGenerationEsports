@@ -33,7 +33,6 @@ export function Navbar() {
         { name: "Talent", href: "/talent" },
         { name: "Careers", href: "/careers" },
         { name: "News", href: "/news" },
-        { name: "Nimbus", href: "/nimbus" },
         { name: "Links", href: "/links" },
       ]
     },

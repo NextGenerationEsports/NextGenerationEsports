@@ -13,7 +13,6 @@ import Achievements from "@/pages/Achievements";
 import Talent from "@/pages/Talent";
 import Careers from "@/pages/Careers";
 import News from "@/pages/News";
-import Nimbus from "@/pages/Nimbus";
 import Links from "@/pages/Links";
 import Partners from "@/pages/Partners";
 import Store from "@/pages/Store";
@@ -37,7 +36,6 @@ function Router() {
           <Route path="/talent" component={Talent} />
           <Route path="/careers" component={Careers} />
           <Route path="/news" component={News} />
-          <Route path="/nimbus" component={Nimbus} />
           <Route path="/links" component={Links} />
           <Route path="/partners" component={Partners} />
           <Route path="/store" component={Store} />
