@@ -1,87 +1,150 @@
-import { useParams } from "wouter";
+import { useParams, Link } from "wouter";
 import { motion } from "framer-motion";
 import { teams } from "@/data";
 import { PlayerCard } from "@/components/PlayerCard";
-import { AchievementCard } from "@/components/AchievementCard";
-import { Trophy, Target, Shield, Zap } from "lucide-react"; // Sample icons for team achievements
+import { Clock, ArrowLeft, type LucideIcon } from "lucide-react";
 import NotFound from "@/pages/not-found";
+
+function AchievementRow({ icon: Icon, title, description, color, index }: { icon: LucideIcon; title: string; description: string; color: string; index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.07 }}
+      viewport={{ once: true }}
+      className="flex items-start gap-4 py-5 border-b border-white/[0.06] last:border-0"
+    >
+      <div className="flex-shrink-0 w-9 h-9 rounded flex items-center justify-center" style={{ background: `${color}18`, color }}>
+        <Icon size={16} />
+      </div>
+      <div>
+        <p className="font-display font-bold text-base text-white leading-tight">{title}</p>
+        <p className="text-white/40 text-sm mt-0.5">{description}</p>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function TeamPage() {
   const params = useParams();
   const teamId = params.id;
-  
   const team = teams.find(t => t.id === teamId);
 
-  if (!team) {
-    return <NotFound />;
-  }
-
-  // Dummy achievements specifically for the team pages
-  const teamAchievements = [
-    { id: "ta-1", icon: Trophy, title: "Regional Champions", description: "Secured 1st place in the MENA Regional Qualifier." },
-    { id: "ta-2", icon: Target, title: "Undefeated Season", description: "Finished the regular season with a perfect record." },
-    { id: "ta-3", icon: Shield, title: "Best Defense", description: "Lowest points conceded in the tournament history." },
-  ];
+  if (!team) return <NotFound />;
 
   return (
     <div className="min-h-screen bg-background pb-24">
-      {/* Hero Banner tinted with game color */}
-      <div 
-        className="pt-32 pb-20 relative overflow-hidden border-b border-card-border"
-        style={{ '--game-color': team.color } as React.CSSProperties}
-      >
-        <div 
-          className="absolute inset-0 opacity-20"
-          style={{ background: `linear-gradient(to bottom right, var(--game-color), transparent)` }}
+      {/* Hero */}
+      <div className="pt-28 pb-16 relative overflow-hidden border-b border-white/[0.06]">
+        {/* Background glow */}
+        <div
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] blur-[100px] opacity-15 pointer-events-none"
+          style={{ background: team.color }}
         />
-        <div className="absolute inset-0 bg-background/80 backdrop-blur-[2px]" />
-        
+
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div 
-              className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-6 shadow-lg"
-              style={{ backgroundColor: `${team.color}30`, color: team.color, border: `1px solid ${team.color}50` }}
-            >
-              <span className="font-display font-bold text-2xl uppercase">{team.id.substring(0,2)}</span>
+          <Link href="/" className="inline-flex items-center gap-2 text-white/40 text-sm font-semibold mb-8 hover:text-white transition-colors" data-testid="team-back-link">
+            <ArrowLeft size={14} /> Back to Home
+          </Link>
+
+          <div className="flex items-start gap-6">
+            {/* Game logo */}
+            {team.logo && (
+              <div className="flex-shrink-0 hidden sm:block">
+                <img
+                  src={team.logo}
+                  alt={team.name}
+                  className="h-16 w-auto object-contain"
+                  style={{ filter: "brightness(0) invert(1)", opacity: 0.85 }}
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                />
+              </div>
+            )}
+            <div>
+              {team.division && (
+                <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: team.color }}>
+                  {team.division}
+                </p>
+              )}
+              <h1 className="font-display font-black text-5xl md:text-7xl uppercase tracking-tight text-white leading-none mb-3">
+                {team.name}
+              </h1>
+              <p className="text-white/50 text-lg font-medium">{team.tagline}</p>
             </div>
-            <h1 className="font-display font-bold text-5xl md:text-7xl uppercase tracking-tight mb-4">
-              {team.name}
-            </h1>
-            <p className="text-xl md:text-2xl font-medium text-white/80 max-w-2xl">
-              {team.tagline}
-            </p>
-          </motion.div>
+          </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 pt-16">
-        {/* Roster Section */}
-        <div className="mb-24">
-          <h2 className="font-display font-bold text-3xl uppercase tracking-widest mb-8 border-l-4 pl-4" style={{ borderColor: team.color }}>
-            Active Roster
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {team.players.map((player, index) => (
-              <PlayerCard key={player.id} {...player} index={index} />
-            ))}
-          </div>
-        </div>
+      <div className="container mx-auto px-4 md:px-6 pt-14">
+        {/* Coming Soon State */}
+        {team.comingSoon ? (
+          <div className="min-h-[40vh] flex flex-col items-center justify-center text-center py-24">
+            <div
+              className="w-20 h-20 rounded-full flex items-center justify-center mb-8"
+              style={{ background: `${team.color}15`, border: `1px solid ${team.color}30` }}
+            >
+              <Clock size={28} style={{ color: team.color }} />
+            </div>
+            <h2 className="font-display font-black text-4xl text-white uppercase mb-3">Roster Coming Soon</h2>
+            <p className="text-white/40 max-w-md">
+              We're currently building out the {team.name} roster. Check back soon for player announcements.
+            </p>
 
-        {/* Team Achievements Section */}
-        <div>
-          <h2 className="font-display font-bold text-3xl uppercase tracking-widest mb-8 border-l-4 pl-4" style={{ borderColor: team.color }}>
-            Honors
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {teamAchievements.map((achievement, index) => (
-              <AchievementCard key={achievement.id} {...achievement} index={index} />
-            ))}
+            {team.achievements && team.achievements.length > 0 && (
+              <div className="mt-16 w-full max-w-2xl text-left">
+                <h3 className="font-display font-bold text-sm uppercase tracking-[0.2em] text-white/40 mb-4">Past Achievements</h3>
+                {team.achievements.map((a, i) => (
+                  <AchievementRow key={a.id} {...a} color={team.color} index={i} />
+                ))}
+              </div>
+            )}
           </div>
-        </div>
+        ) : (
+          <>
+            {/* Roster */}
+            <div className="mb-20">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-1 h-6 rounded-full" style={{ background: team.color }} />
+                <h2 className="font-display font-bold text-2xl uppercase tracking-widest text-white">Active Roster</h2>
+              </div>
+
+              {team.players.length === 0 ? (
+                <p className="text-white/30">No players listed yet.</p>
+              ) : (
+                <div className={`grid gap-5 ${
+                  team.players.length === 1
+                    ? "grid-cols-1 max-w-xs"
+                    : team.players.length === 2
+                    ? "grid-cols-2 max-w-sm"
+                    : team.players.length <= 3
+                    ? "grid-cols-1 sm:grid-cols-3"
+                    : team.players.length <= 4
+                    ? "grid-cols-2 sm:grid-cols-4"
+                    : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
+                }`}>
+                  {team.players.map((player, index) => (
+                    <PlayerCard key={player.id} {...player} index={index} gameColor={team.color} />
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Achievements */}
+            {team.achievements && team.achievements.length > 0 && (
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-1 h-6 rounded-full" style={{ background: team.color }} />
+                  <h2 className="font-display font-bold text-2xl uppercase tracking-widest text-white">Achievements</h2>
+                </div>
+                <div className="max-w-2xl">
+                  {team.achievements.map((a, i) => (
+                    <AchievementRow key={a.id} {...a} color={team.color} index={i} />
+                  ))}
+                </div>
+              </div>
+            )}
+          </>
+        )}
       </div>
     </div>
   );

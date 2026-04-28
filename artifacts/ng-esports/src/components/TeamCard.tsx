@@ -1,34 +1,71 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { Clock } from "lucide-react";
 
 interface TeamCardProps {
   id: string;
   name: string;
   tagline: string;
   route: string;
+  color: string;
+  logo?: string;
+  comingSoon?: boolean;
   index: number;
 }
 
-export function TeamCard({ id, name, tagline, route, index }: TeamCardProps) {
+export function TeamCard({ id, name, tagline, route, color, logo, comingSoon, index }: TeamCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      transition={{ duration: 0.45, delay: index * 0.08 }}
       viewport={{ once: true }}
-      className="group relative overflow-hidden rounded-xl bg-card/50 border border-card-border/50 backdrop-blur-sm transition-all hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(91,33,182,0.3)]"
+      className="group relative overflow-hidden rounded-lg bg-[#0d0d14] border border-white/[0.06]"
+      style={{ borderColor: `${color}20` }}
       data-testid={`team-card-${id}`}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-      <div className="p-6 h-full flex flex-col items-start">
-        <div className="h-12 w-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary mb-4">
-          <span className="font-display font-bold text-xl">{id.substring(0, 2).toUpperCase()}</span>
+      {/* Top color strip */}
+      <div className="h-[3px] w-full" style={{ background: `linear-gradient(to right, ${color}, transparent)` }} />
+
+      <div className="p-6 flex flex-col h-full">
+        {/* Game logo or fallback */}
+        <div className="h-14 flex items-center mb-5">
+          {logo ? (
+            <img
+              src={logo}
+              alt={name}
+              className="h-10 w-auto object-contain"
+              style={{ filter: "brightness(0) invert(1)", maxWidth: 120 }}
+              loading="lazy"
+              onError={(e) => {
+                (e.target as HTMLImageElement).style.display = "none";
+              }}
+            />
+          ) : (
+            <span className="font-display font-black text-3xl tracking-tight text-white/80">
+              {name.split(" ")[0].toUpperCase()}
+            </span>
+          )}
         </div>
-        <h3 className="font-display font-bold text-2xl mb-1">{name}</h3>
-        <p className="text-muted-foreground text-sm mb-6 flex-grow">{tagline}</p>
-        <Link href={route} className="inline-flex items-center text-sm font-semibold text-primary hover:text-primary-foreground transition-colors group-hover:translate-x-1 duration-300">
-          View Roster →
-        </Link>
+
+        <h3 className="font-display font-bold text-xl mb-1 text-white leading-tight">{name}</h3>
+        <p className="text-white/40 text-sm mb-6 flex-grow leading-relaxed">{tagline}</p>
+
+        {comingSoon ? (
+          <span className="inline-flex items-center gap-2 text-xs font-semibold text-white/30 uppercase tracking-widest">
+            <Clock size={12} />
+            Coming Soon
+          </span>
+        ) : (
+          <Link
+            href={route}
+            className="inline-flex items-center text-sm font-bold uppercase tracking-widest group-hover:gap-3 gap-2 transition-all duration-300"
+            style={{ color }}
+            data-testid={`team-card-link-${id}`}
+          >
+            View Roster <span>→</span>
+          </Link>
+        )}
       </div>
     </motion.div>
   );
