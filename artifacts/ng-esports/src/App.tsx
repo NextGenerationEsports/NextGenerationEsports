@@ -21,6 +21,7 @@ import NotFound from "@/pages/not-found";
 
 // Lazy load team pages
 const TeamPage = lazy(() => import("@/pages/teams/TeamPage"));
+const ManagementPage = lazy(() => import("@/pages/teams/ManagementPage"));
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,13 @@ function Router() {
           <Route path="/links" component={Links} />
           <Route path="/partners" component={Partners} />
           <Route path="/store" component={Store} />
+          <Route path="/teams/management">
+            {() => (
+              <Suspense fallback={<div className="min-h-screen bg-background flex items-center justify-center"><div className="w-8 h-8 rounded-full border-4 border-primary border-t-transparent animate-spin" /></div>}>
+                <ManagementPage />
+              </Suspense>
+            )}
+          </Route>
           <Route path="/teams/:id">
             {() => (
               <Suspense fallback={<div className="min-h-screen bg-background flex items-center justify-center"><div className="w-8 h-8 rounded-full border-4 border-primary border-t-transparent animate-spin" /></div>}>

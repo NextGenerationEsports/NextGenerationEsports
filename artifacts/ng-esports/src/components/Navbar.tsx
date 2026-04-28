@@ -47,6 +47,7 @@ export function Navbar() {
         { name: "Fortnite", href: "/teams/fortnite" },
         { name: "FC 2026", href: "/teams/fc2026" },
         { name: "Tekken 8", href: "/teams/tekken-8" },
+        { name: "Management", href: "/teams/management" },
       ]
     },
     { name: "Partners", href: "/partners" },
