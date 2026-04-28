@@ -22,7 +22,8 @@ export const management = [
   { id: "mgmt-1", name: "Sayed Yasser", role: "Executive Management", photo: "/mgmt-ng-management.jpg", bio: "Leading the organization's vision, strategy, and competitive direction across all titles." },
   { id: "mgmt-2", name: "Ibrahim Nafea", role: "Operations & Logistics", photo: "/mgmt-neutron.jpg", bio: "Overseeing day-to-day operations, player welfare, scheduling, and tournament coordination. Known in the scene as Neutron." },
   { id: "mgmt-3", name: "Content Director", role: "Content & Media", bio: "Driving all creative output, social media presence, and brand storytelling for NG." },
-  { id: "mgmt-4", name: "Partnerships Manager", role: "Partnerships & Sponsorships", bio: "Building brand relationships and securing sponsorships to support the org's growth." },
+  { id: "mgmt-4a", name: "Sayed Yasser", role: "Partnerships & Sponsorships", photo: "/mgmt-ng-management.jpg", bio: "Building brand relationships and securing sponsorships to support the org's growth." },
+  { id: "mgmt-4b", name: "Ibrahim Nafea", role: "Partnerships & Sponsorships", photo: "/mgmt-neutron.jpg", bio: "Building brand relationships and securing sponsorships to support the org's growth. Known in the scene as Neutron." },
   { id: "mgmt-5", name: "Head Coach", role: "Performance & Coaching", bio: "Developing player skills, building competitive strategies, and preparing rosters for top-level play." },
   { id: "mgmt-6", name: "Community Manager", role: "Community & Engagement", bio: "Connecting NG with its fanbase, managing community events, and building Egyptian esports culture." },
 ];
