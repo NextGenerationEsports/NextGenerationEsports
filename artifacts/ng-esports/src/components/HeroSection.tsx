@@ -7,6 +7,13 @@ import { assetPath } from "@/lib/utils";
 // EDIT: Update the headline, subheading, and CTA button labels/links below.
 // ──────────────────────────────────────────────────────────────────────────────
 export function HeroSection() {
+  const scrollToRosters = () => {
+    document.getElementById("home-rosters")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <section
       className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-16"
@@ -109,18 +116,28 @@ export function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <motion.a
-        href="#home-rosters"
+      <motion.button
+        type="button"
+        onClick={scrollToRosters}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-center"
+        whileHover={{ y: -2 }}
+        whileTap={{ scale: 0.98 }}
+        className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3 text-center md:bottom-8"
       >
-        <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent" />
         <span className="text-[10px] font-semibold uppercase tracking-[0.35em] text-muted-foreground">
           Scroll
         </span>
-      </motion.a>
+        <div className="relative flex h-14 w-4 items-start justify-center overflow-hidden">
+          <span className="absolute top-0 h-full w-px bg-gradient-to-b from-primary via-primary/70 to-transparent" />
+          <motion.span
+            animate={{ y: [0, 18, 0], opacity: [0.35, 1, 0.35] }}
+            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-0 h-2.5 w-2.5 rounded-full bg-primary shadow-[0_0_14px_rgba(124,58,237,0.6)]"
+          />
+        </div>
+      </motion.button>
     </section>
   );
 }
