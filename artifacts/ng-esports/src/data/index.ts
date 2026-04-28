@@ -32,8 +32,7 @@ export const management = [
       { name: "Ibrahim Nafea", nickname: "Neutron", photo: "/mgmt-neutron.jpg" },
     ],
   },
-  { id: "mgmt-5", name: "Head Coach", role: "Performance & Coaching", bio: "Developing player skills, building competitive strategies, and preparing rosters for top-level play." },
-  { id: "mgmt-6", name: "Community Manager", role: "Community & Engagement", bio: "Connecting NG with its fanbase, managing community events, and building Egyptian esports culture." },
+  { id: "mgmt-6", name: "E3dam", role: "Social Media Manager", photo: "/mgmt-e3dam.png", bio: "Connecting NG with its fanbase, managing community events, and building Egyptian esports culture." },
 ];
 
 // ── Teams ─────────────────────────────────────────────────────────────────────
