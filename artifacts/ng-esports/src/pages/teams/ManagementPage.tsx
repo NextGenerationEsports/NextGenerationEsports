@@ -4,6 +4,12 @@ import { management, socialLinks } from "@/data";
 import { ArrowLeft, Users } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 
+// ── Management Page ────────────────────────────────────────────────────────────
+// EDIT: All staff data lives in src/data/index.ts under `management`.
+//       - SingleMember entries have a top-level `name` field.
+//       - MultiMember entries have a `members[]` array (for shared roles like Partnerships).
+// ──────────────────────────────────────────────────────────────────────────────
+
 // Types for management entries
 type SingleMember = {
   id: string;
