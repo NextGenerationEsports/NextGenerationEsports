@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Next Generation Esports</title>
+    <!--
+      GitHub Pages SPA — 404 redirect.
+      GitHub Pages returns 404 for any path that isn't a real file.
+      This page saves the intended URL to sessionStorage, then
+      redirects to the app root. The main index.html restores the
+      URL via history.replaceState so the React router picks it up.
+    -->
+    <script>
+      sessionStorage.setItem("ng_redirect", window.location.href);
+    </script>
+    <meta http-equiv="refresh" content="0;URL='./'"/>
+  </head>
+  <body>
+    <p>Loading&hellip;</p>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+    <!-- ── SEO & Description ─────────────────────────────────────────────────
+         EDIT: Update the description to match your organization's tagline.
+    ──────────────────────────────────────────────────────────────────────── -->
+    <meta name="description" content="Next Generation Esports — Egypt's premier esports organization competing across LoL, Tekken 8, Fortnite, FC 2026, Valorant, and CrossFire." />
+    <meta name="theme-color" content="#7C3AED" />
+
+    <!-- ── Page Title ────────────────────────────────────────────────────────
+         EDIT: Change the title tag to update the browser tab / bookmark name.
+    ──────────────────────────────────────────────────────────────────────── -->
+    <title>Next Generation Esports</title>
+
+    <!-- ── Favicon / App Icon ────────────────────────────────────────────────
+         EDIT: Replace ng-icon.png in /public with a new image to change the site icon.
+         The icon is also used as the Apple touch icon (home-screen shortcut on iOS).
+    ──────────────────────────────────────────────────────────────────────── -->
+    <link rel="icon" type="image/png" href="./ng-icon.png" />
+    <link rel="apple-touch-icon" href="./ng-icon.png" />
+
+    <!-- ── Open Graph (Social Media Previews) ────────────────────────────────
+         EDIT: Update og:title, og:description, and og:image for social-sharing cards.
+         og:image should be a 1200×630 JPEG in /public (currently opengraph.jpg).
+    ──────────────────────────────────────────────────────────────────────── -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Next Generation Esports" />
+    <meta property="og:description" content="Egypt's premier esports organization — built for competition, designed for culture." />
+    <meta property="og:image" content="./opengraph.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Next Generation Esports" />
+    <meta name="twitter:description" content="Egypt's premier esports organization." />
+    <meta name="twitter:image" content="./opengraph.jpg" />
+
+    <!-- ── Fonts ──────────────────────────────────────────────────────────────
+         EDIT: Swap font families here to change the site-wide typography.
+         Rajdhani = display headings  |  Inter = body text
+    ──────────────────────────────────────────────────────────────────────── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+      GitHub Pages SPA — restore redirect.
+      The 404.html page stores the original URL in sessionStorage.
+      This script reads it back and uses history.replaceState so
+      the React router (wouter) sees the correct path on load.
+      Do NOT remove this script if you plan to deploy to GitHub Pages.
+    -->
+    <script>
+      (function () {
+        var redirect = sessionStorage.getItem("ng_redirect");
+        if (redirect) {
+          sessionStorage.removeItem("ng_redirect");
+          if (redirect !== location.href) {
+            history.replaceState(null, null, redirect);
+          }
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/NextGeneration-Esports/assets/index-DQ0A_x_W.js"></script>
+    <link rel="stylesheet" crossorigin href="/NextGeneration-Esports/assets/index-B2sWdm6Y.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
