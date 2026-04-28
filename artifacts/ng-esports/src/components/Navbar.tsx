@@ -3,12 +3,18 @@ import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 
+// ── Navbar ─────────────────────────────────────────────────────────────────────
+// EDIT: To add or remove top-level nav links, update the `navLinks` array below.
+//       For dropdown menus add a `dropdown` array of { name, href } objects.
+//       For simple links, omit the `dropdown` key.
+// ──────────────────────────────────────────────────────────────────────────────
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [location] = useLocation();
 
+  // Detect scroll to apply glassmorphism effect on the header
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -17,15 +23,20 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close menus on route change
   useEffect(() => {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
   }, [location]);
 
+  // ── Navigation structure ────────────────────────────────────────────────────
+  // EDIT: Add { name, href } for a plain link.
+  //       Add { name, href: "#", dropdown: [...] } for a dropdown group.
+  // ──────────────────────────────────────────────────────────────────────────
   const navLinks = [
     { name: "Home", href: "/" },
-    { 
-      name: "About", 
+    {
+      name: "About",
       href: "#",
       dropdown: [
         { name: "About NG", href: "/about" },
@@ -34,10 +45,10 @@ export function Navbar() {
         { name: "Careers", href: "/careers" },
         { name: "News", href: "/news" },
         { name: "Links", href: "/links" },
-      ]
+      ],
     },
-    { 
-      name: "Teams", 
+    {
+      name: "Teams",
       href: "#",
       dropdown: [
         { name: "League of Legends", href: "/teams/lol" },
@@ -47,31 +58,41 @@ export function Navbar() {
         { name: "FC 2026", href: "/teams/fc2026" },
         { name: "Tekken 8", href: "/teams/tekken-8" },
         { name: "Management", href: "/teams/management" },
-      ]
+      ],
     },
     { name: "Partners", href: "/partners" },
     { name: "Store", href: "/store" },
-    { name: "News", href: "/news" },
-    { name: "Links", href: "/links" },
   ];
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled ? "bg-background/80 backdrop-blur-md border-b border-card-border shadow-lg" : "bg-transparent py-2"
+        isScrolled
+          ? "bg-background/80 backdrop-blur-md border-b border-card-border shadow-lg"
+          : "bg-transparent py-2"
       }`}
       data-testid="navbar"
     >
       <div className="container mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+        {/* ── Logo / Brand ──────────────────────────────────────────────────
+            EDIT: Change the src of the <img> to swap the navbar logo.
+            The text "NEXT GENERATION" is hidden on very small screens (< sm).
+        ─────────────────────────────────────────────────────────────────── */}
         <Link href="/" className="flex items-center gap-3 z-50 group">
-          <img src="/ng-logo-white.png" alt="NG Logo" className="h-8 w-auto group-hover:drop-shadow-[0_0_8px_rgba(124,58,237,0.8)] transition-all" />
-          <span className="font-display font-bold text-xl tracking-wider hidden sm:block">NEXT GENERATION</span>
+          <img
+            src="/ng-icon.png"
+            alt="NG Logo"
+            className="h-8 w-auto group-hover:drop-shadow-[0_0_8px_rgba(124,58,237,0.8)] transition-all"
+          />
+          <span className="font-display font-bold text-xl tracking-wider hidden sm:block">
+            NEXT GENERATION
+          </span>
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
-            <div 
+            <div
               key={link.name}
               className="relative"
               onMouseEnter={() => link.dropdown && setActiveDropdown(link.name)}
@@ -79,19 +100,28 @@ export function Navbar() {
             >
               {link.dropdown ? (
                 <button className="px-4 py-2 text-sm font-semibold hover:text-primary transition-colors flex items-center gap-1">
-                  {link.name} <ChevronDown size={14} className={`transition-transform ${activeDropdown === link.name ? "rotate-180 text-primary" : ""}`} />
+                  {link.name}{" "}
+                  <ChevronDown
+                    size={14}
+                    className={`transition-transform ${
+                      activeDropdown === link.name ? "rotate-180 text-primary" : ""
+                    }`}
+                  />
                 </button>
               ) : (
-                <Link href={link.href} className="px-4 py-2 text-sm font-semibold hover:text-primary transition-colors block">
+                <Link
+                  href={link.href}
+                  className="px-4 py-2 text-sm font-semibold hover:text-primary transition-colors block"
+                >
                   {link.name}
                 </Link>
               )}
 
-              {/* Dropdown */}
+              {/* Dropdown panel */}
               {link.dropdown && (
                 <AnimatePresence>
                   {activeDropdown === link.name && (
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 10, scale: 0.95 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
@@ -100,8 +130,8 @@ export function Navbar() {
                     >
                       <div className="bg-card border border-card-border rounded-xl shadow-xl overflow-hidden py-2 flex flex-col">
                         {link.dropdown.map((dropLink) => (
-                          <Link 
-                            key={dropLink.name} 
+                          <Link
+                            key={dropLink.name}
                             href={dropLink.href}
                             className="px-4 py-2 text-sm hover:bg-primary/20 hover:text-primary transition-colors text-left"
                           >
@@ -117,16 +147,17 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button 
+        {/* Mobile menu toggle */}
+        <button
           className="lg:hidden text-foreground hover:text-primary transition-colors z-50 p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           data-testid="button-mobile-menu"
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Mobile Menu */}
+        {/* Mobile full-screen menu */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
@@ -138,14 +169,19 @@ export function Navbar() {
             >
               <div className="flex flex-col gap-4">
                 {navLinks.map((link) => (
-                  <div key={`mobile-${link.name}`} className="border-b border-card-border/50 pb-4">
+                  <div
+                    key={`mobile-${link.name}`}
+                    className="border-b border-card-border/50 pb-4"
+                  >
                     {link.dropdown ? (
                       <div className="flex flex-col gap-3">
-                        <span className="text-lg font-display font-bold text-muted-foreground uppercase tracking-widest">{link.name}</span>
+                        <span className="text-lg font-display font-bold text-muted-foreground uppercase tracking-widest">
+                          {link.name}
+                        </span>
                         <div className="flex flex-col gap-2 pl-4 border-l border-primary/30">
                           {link.dropdown.map((dropLink) => (
-                            <Link 
-                              key={`mobile-drop-${dropLink.name}`} 
+                            <Link
+                              key={`mobile-drop-${dropLink.name}`}
                               href={dropLink.href}
                               className="text-lg font-semibold hover:text-primary transition-colors py-1"
                             >
@@ -155,7 +191,10 @@ export function Navbar() {
                         </div>
                       </div>
                     ) : (
-                      <Link href={link.href} className="text-2xl font-display font-bold hover:text-primary transition-colors block">
+                      <Link
+                        href={link.href}
+                        className="text-2xl font-display font-bold hover:text-primary transition-colors block"
+                      >
                         {link.name}
                       </Link>
                     )}

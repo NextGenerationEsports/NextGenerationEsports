@@ -20,9 +20,12 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
 
+          {/* ── Footer Brand ─────────────────────────────────────────────────
+              EDIT: Replace ng-icon.png in /public to change the footer logo.
+          ─────────────────────────────────────────────────────────────────── */}
           <div>
             <Link href="/" className="inline-block mb-5">
-              <img src="/ng-logo-white.png" alt="NG Esports" className="h-10 w-auto" />
+              <img src="/ng-icon.png" alt="NG Esports" className="h-10 w-auto" />
             </Link>
             <p className="text-white/40 text-sm leading-relaxed mb-6 max-w-xs">
               Next Generation Esports — competing, creating, and building the future of esports.
