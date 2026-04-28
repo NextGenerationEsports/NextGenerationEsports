@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import { assetPath } from "@/lib/utils";
 
 // ── 404 Not Found Page ────────────────────────────────────────────────────────
 // Shown when a user visits a URL that has no matching route.
@@ -26,7 +27,7 @@ export default function NotFound() {
 
         {/* NG logo */}
         <img
-            src={`${import.meta.env.BASE_URL}ng-icon.png`}
+          src={assetPath("ng-icon.png")}
           alt="NG Esports"
           className="w-14 h-auto mx-auto mb-6 drop-shadow-[0_0_12px_rgba(124,58,237,0.5)]"
         />

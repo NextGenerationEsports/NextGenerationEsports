@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { FaXTwitter, FaInstagram, FaFacebook, FaTiktok, FaYoutube } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { socialLinks } from "@/data";
+import { assetPath } from "@/lib/utils";
 
 const socials = [
   { icon: FaXTwitter, href: socialLinks.twitter, label: "X / Twitter", testId: "social-twitter" },
@@ -25,7 +26,7 @@ export function Footer() {
           ─────────────────────────────────────────────────────────────────── */}
           <div>
             <Link href="/" className="inline-block mb-5">
-            <img src={`${import.meta.env.BASE_URL}ng-icon.png`} alt="NG Esports" className="h-10 w-auto" />
+              <img src={assetPath("ng-icon.png")} alt="NG Esports" className="h-10 w-auto" />
             </Link>
             <p className="text-white/40 text-sm leading-relaxed mb-6 max-w-xs">
               Next Generation Esports — competing, creating, and building the future of esports.

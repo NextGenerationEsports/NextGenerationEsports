@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, ExternalLink } from "lucide-react";
 import { FaXTwitter, FaInstagram, FaFacebook, FaTiktok, FaYoutube } from "react-icons/fa6";
 import { socialLinks } from "@/data";
+import { assetPath } from "@/lib/utils";
 
 // ── Social Links Page ─────────────────────────────────────────────────────────
 // EDIT: Add or remove entries in the `links` array below to update social cards.
@@ -32,7 +33,7 @@ export default function Links() {
         >
           {/* EDIT: Replace ng-icon.png in /public to change the logo shown here */}
           <img
-            src={`${import.meta.env.BASE_URL}ng-icon.png`}
+            src={assetPath("ng-icon.png")}
             alt="NG"
             className="w-16 h-auto mx-auto mb-8 drop-shadow-[0_0_16px_rgba(124,58,237,0.5)]"
           />

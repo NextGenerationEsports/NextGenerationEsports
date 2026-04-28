@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { assetPath } from "@/lib/utils";
 
 // ── HeroSection ───────────────────────────────────────────────────────────────
 // Full-viewport hero shown at the top of the homepage.
@@ -50,7 +51,7 @@ export function HeroSection() {
           className="mb-8"
         >
           <img
-            src={`${import.meta.env.BASE_URL}ng-icon.png`}
+            src={assetPath("ng-icon.png")}
             alt="NG Logo"
             className="w-24 md:w-32 h-auto mx-auto drop-shadow-[0_0_15px_rgba(124,58,237,0.5)]"
           />

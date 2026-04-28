@@ -1,4 +1,5 @@
 import { Trophy, Star, Users, Gamepad2, Zap, Medal, Target, Flame, Crown, Shield } from "lucide-react";
+import { assetPath } from "@/lib/utils";
 
 // ── Social Links ───────────────────────────────────────────────────────────────
 // EDIT: Update these URLs to match the organization's official social accounts.
@@ -19,20 +20,20 @@ export const management = [
   // EDIT: Update name, role, bio, and photo for each management member.
   //       Set photo to a path in /public (e.g. "/mgmt-name.jpg") to show a real photo.
   //       Leave photo empty ("") to show the initial-letter avatar placeholder instead.
-  { id: "mgmt-1", name: "Sayed Yasser", role: "Executive Management", photo: "/mgmt-ng-management.jpg", bio: "Leading the organization's vision, strategy, and competitive direction across all titles." },
-  { id: "mgmt-2", name: "Ibrahim Nafea", nickname: "Neutron", role: "Operations & Logistics", photo: "/mgmt-neutron.jpg", bio: "Overseeing day-to-day operations, player welfare, scheduling, and tournament coordination." },
-  { id: "mgmt-3", name: "Munchy", role: "Content & Media", photo: "/mgmt-munchy.png", bio: "Driving all creative output, social media presence, and brand storytelling for NG." },
+  { id: "mgmt-1", name: "Sayed Yasser", role: "Executive Management", photo: assetPath("mgmt-ng-management.jpg"), bio: "Leading the organization's vision, strategy, and competitive direction across all titles." },
+  { id: "mgmt-2", name: "Ibrahim Nafea", nickname: "Neutron", role: "Operations & Logistics", photo: assetPath("mgmt-neutron.jpg"), bio: "Overseeing day-to-day operations, player welfare, scheduling, and tournament coordination." },
+  { id: "mgmt-3", name: "Munchy", role: "Content & Media", photo: assetPath("mgmt-munchy.png"), bio: "Driving all creative output, social media presence, and brand storytelling for NG." },
   // EDIT: This card has two members — add/remove from the members array to update the Partnerships card.
   {
     id: "mgmt-4",
     role: "Partnerships & Sponsorships",
     bio: "Building brand relationships and securing sponsorships to support the org's growth.",
     members: [
-      { name: "Sayed Yasser", photo: "/mgmt-ng-management.jpg" },
-      { name: "Ibrahim Nafea", nickname: "Neutron", photo: "/mgmt-neutron.jpg" },
+      { name: "Sayed Yasser", photo: assetPath("mgmt-ng-management.jpg") },
+      { name: "Ibrahim Nafea", nickname: "Neutron", photo: assetPath("mgmt-neutron.jpg") },
     ],
   },
-  { id: "mgmt-6", name: "E3dam", role: "Social Media Manager", photo: "/mgmt-e3dam.png", bio: "Connecting NG with its fanbase, managing community events, and building Egyptian esports culture." },
+  { id: "mgmt-6", name: "E3dam", role: "Social Media Manager", photo: assetPath("mgmt-e3dam.png"), bio: "Connecting NG with its fanbase, managing community events, and building Egyptian esports culture." },
 ];
 
 // ── Teams ─────────────────────────────────────────────────────────────────────
@@ -52,7 +53,7 @@ export const teams = [
     game: "lol",
     color: "#C89B3C",
     // EDIT: Replace with the path to the LoL logo in /public
-    logo: "/logo-lol.png",
+    logo: assetPath("logo-lol.png"),
     bannerGradient: "from-[#0a1428] via-[#091024] to-background",
     bannerAccent: "rgba(200,155,60,0.15)",
     comingSoon: false,
@@ -79,7 +80,7 @@ export const teams = [
     game: "valorant",
     color: "#FF4655",
     // EDIT: Official Valorant logo (SVG). Replace with /logo-valorant.png if you prefer a PNG.
-    logo: "/logo-valorant.svg",
+    logo: assetPath("logo-valorant.svg"),
     bannerGradient: "from-[#1a0608] via-[#12040a] to-background",
     bannerAccent: "rgba(255,70,85,0.12)",
     comingSoon: true,
@@ -101,7 +102,7 @@ export const teams = [
     game: "crossfire",
     color: "#F5A623",
     // EDIT: CrossFire logo. Replace with a higher-res version if available.
-    logo: "/logo-crossfire.svg",
+    logo: assetPath("logo-crossfire.svg"),
     bannerGradient: "from-[#1a1000] via-[#130d00] to-background",
     bannerAccent: "rgba(245,166,35,0.1)",
     comingSoon: true,
@@ -116,7 +117,7 @@ export const teams = [
     game: "fortnite",
     color: "#00CFFF",
     // EDIT: Replace with the path to the Fortnite logo in /public
-    logo: "/logo-fortnite.png",
+    logo: assetPath("logo-fortnite.png"),
     bannerGradient: "from-[#001a2a] via-[#000f1a] to-background",
     bannerAccent: "rgba(0,207,255,0.1)",
     comingSoon: false,
@@ -125,8 +126,8 @@ export const teams = [
     ],
     players: [
       // EDIT: Add more players by duplicating this object and updating the fields
-      { id: "fn-1", name: "Yassin", role: "IGL", country: "EG", photo: "/player-yassin.jpg" },
-      { id: "fn-2", name: "Zak", role: "Fragger", country: "EG", photo: "/player-zak.jpg" },
+      { id: "fn-1", name: "Yassin", role: "IGL", country: "EG", photo: assetPath("player-yassin.jpg") },
+      { id: "fn-2", name: "Zak", role: "Fragger", country: "EG", photo: assetPath("player-zak.jpg") },
     ],
   },
   {
@@ -137,7 +138,7 @@ export const teams = [
     game: "fc2026",
     color: "#00E87A",
     // EDIT: Replace with the path to the FC 2026 logo in /public
-    logo: "/logo-fc26.webp",
+    logo: assetPath("logo-fc26.webp"),
     bannerGradient: "from-[#001a0e] via-[#000f08] to-background",
     bannerAccent: "rgba(0,232,122,0.1)",
     comingSoon: false,
@@ -148,8 +149,8 @@ export const teams = [
       { id: "fc-a4", icon: Target, title: "Birell Insomnia Egypt 2026 — 4th Place", description: "4th place finish at the second Birell Insomnia Egypt 2026 bracket." },
     ],
     players: [
-      { id: "fc-1", name: "Eydoox", role: "Main Player", country: "EG", photo: "/player-eydoox.jpg" },
-      { id: "fc-2", name: "Bondok", role: "Main Player", country: "EG", photo: "/player-bondok.jpg" },
+      { id: "fc-1", name: "Eydoox", role: "Main Player", country: "EG", photo: assetPath("player-eydoox.jpg") },
+      { id: "fc-2", name: "Bondok", role: "Main Player", country: "EG", photo: assetPath("player-bondok.jpg") },
     ],
   },
   {
@@ -160,7 +161,7 @@ export const teams = [
     game: "tekken-8",
     color: "#E53E3E",
     // EDIT: Replace with the path to the Tekken 8 logo in /public
-    logo: "/logo-tekken8.png",
+    logo: assetPath("logo-tekken8.png"),
     bannerGradient: "from-[#1a0000] via-[#120000] to-background",
     bannerAccent: "rgba(229,62,62,0.12)",
     comingSoon: false,
@@ -169,7 +170,7 @@ export const teams = [
       { id: "tk-a2", icon: Medal, title: "Tekken 8 MENA 2025 — Top 3", description: "Podium finish across the entire Middle East & North Africa region." },
     ],
     players: [
-      { id: "tk-1", name: "SuperBrine", role: "Main Fighter", country: "EG", photo: "/player-superbrine.jpg" },
+      { id: "tk-1", name: "SuperBrine", role: "Main Fighter", country: "EG", photo: assetPath("player-superbrine.jpg") },
     ],
   },
 ];
@@ -183,7 +184,7 @@ export const partners = [
   {
     id: "up2",
     name: "up2 production",
-    logo: "/partner-hexagon.png",
+    logo: assetPath("partner-hexagon.png"),
     category: "Technology Partner",
     description: "Powering the next generation of digital infrastructure and content production for NG Esports.",
     link: "https://x.com/Up2Production",
@@ -191,7 +192,7 @@ export const partners = [
   {
     id: "toxic",
     name: "Toxic Gaming",
-    logo: "/partner-toxic-gaming.png",
+    logo: assetPath("partner-toxic-gaming.png"),
     category: "Apparel & Gaming House",
     description: "Official apparel partner and the home of NG Esports. Toxic Gaming is our official Gaming House in Cairo — where the team trains, lives, and competes.",
     link: "https://www.google.com/maps/search/TOXiC+Gaming/@30.0712788,31.516235,17z?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D",

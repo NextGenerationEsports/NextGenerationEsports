@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { assetPath } from "@/lib/utils";
 
 // ── Navbar ─────────────────────────────────────────────────────────────────────
 // EDIT: To add or remove top-level nav links, update the `navLinks` array below.
@@ -80,7 +81,7 @@ export function Navbar() {
         ─────────────────────────────────────────────────────────────────── */}
         <Link href="/" className="flex items-center gap-3 z-50 group">
           <img
-              src={`${import.meta.env.BASE_URL}ng-icon.png`}
+            src={assetPath("ng-icon.png")}
             alt="NG Logo"
             className="h-8 w-auto group-hover:drop-shadow-[0_0_8px_rgba(124,58,237,0.8)] transition-all"
           />
