@@ -126,8 +126,8 @@ export const teams = [
     ],
     players: [
       // EDIT: Add more players by duplicating this object and updating the fields
-      { id: "fn-1", name: "Yassin", role: "IGL", country: "EG", photo: assetPath("player-yassin.jpg") },
-      { id: "fn-2", name: "Zak", role: "Fragger", country: "EG", photo: assetPath("player-zak.jpg") },
+      { id: "fn-1", name: "Yassin", role: "Fragger", country: "EG", photo: assetPath("player-yassin.jpg") },
+      { id: "fn-2", name: "Zak", role: "IGL", country: "EG", photo: assetPath("player-zak.jpg") },
     ],
   },
   {
