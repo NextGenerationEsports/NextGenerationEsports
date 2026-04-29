@@ -115,6 +115,8 @@ export default function TeamPage() {
 
   if (!team) return <NotFound />;
 
+  const isTekken = team.id === "tekken-8";
+
   return (
     <div className="min-h-screen bg-background pb-24">
       {/* Hero Banner */}
@@ -140,8 +142,8 @@ export default function TeamPage() {
                 <img
                   src={team.logo}
                   alt={team.name}
-                  className="h-14 w-auto object-contain"
-                  style={{ mixBlendMode: "screen", opacity: 0.9, maxWidth: 180 }}
+                  className={`${isTekken ? "h-20" : "h-14"} w-auto object-contain`}
+                  style={{ mixBlendMode: "screen", opacity: 0.9, maxWidth: isTekken ? 240 : 180 }}
                   onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                 />
               </div>

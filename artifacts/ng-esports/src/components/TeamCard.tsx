@@ -14,6 +14,8 @@ interface TeamCardProps {
 }
 
 export function TeamCard({ id, name, tagline, route, color, logo, comingSoon, index }: TeamCardProps) {
+  const isTekken = id === "tekken-8";
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -33,8 +35,8 @@ export function TeamCard({ id, name, tagline, route, color, logo, comingSoon, in
             <img
               src={logo}
               alt={name}
-              className="h-9 w-auto object-contain object-left"
-              style={{ mixBlendMode: "screen", maxWidth: 150, opacity: 0.85 }}
+              className={`${isTekken ? "h-11" : "h-9"} w-auto object-contain object-left`}
+              style={{ mixBlendMode: "screen", maxWidth: isTekken ? 180 : 150, opacity: 0.85 }}
               loading="lazy"
               onError={(e) => {
                 const el = e.target as HTMLImageElement;
