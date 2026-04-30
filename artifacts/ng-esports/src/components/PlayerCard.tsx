@@ -31,6 +31,22 @@ function countryFlag(code: string): string {
     .join("");
 }
 
+function roleBadgeLabel(role: string, isCoach?: boolean) {
+  if (isCoach) {
+    return "COACH";
+  }
+
+  if (/assistant manager/i.test(role)) {
+    return "ASSISTANT MANAGER";
+  }
+
+  if (/\bmanager\b/i.test(role)) {
+    return "MANAGER";
+  }
+
+  return null;
+}
+
 export function PlayerCard({
   id,
   name,
@@ -44,6 +60,7 @@ export function PlayerCard({
 }: PlayerCardProps) {
   const code = normalizeCountryCode(country);
   const nationality = countryName ?? COUNTRY_NAMES[code] ?? code;
+  const badgeLabel = roleBadgeLabel(role, isCoach);
 
   return (
     <motion.div
@@ -80,9 +97,9 @@ export function PlayerCard({
           </div>
         )}
 
-        {isCoach && (
+        {badgeLabel && (
           <div className="absolute right-3 top-3 rounded border border-white/20 bg-black/70 px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white/70">
-            COACH
+            {badgeLabel}
           </div>
         )}
       </div>
