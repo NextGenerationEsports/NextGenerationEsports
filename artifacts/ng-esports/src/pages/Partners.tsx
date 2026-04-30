@@ -653,8 +653,22 @@ export default function Partners() {
               viewport={{ once: true }}
               className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6"
             >
-              <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-primary/80">Founded</p>
-              <p className="mt-3 font-display text-4xl font-black uppercase text-white">2025</p>
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-primary/80">Founded</p>
+                  <p className="mt-3 font-display text-4xl font-black uppercase text-white">2025</p>
+                </div>
+
+                <div className="rounded-2xl border border-primary/15 bg-primary/[0.08] px-4 py-3">
+                  <img
+                    src={assetPath("ng-logo-white.png")}
+                    alt="Next Generation Esports"
+                    className="h-10 w-auto object-contain opacity-90"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
               <p className="mt-3 text-sm leading-relaxed text-white/40">
                 NG was founded in 2025 with a focus on structured growth, competitive discipline, and media-led visibility.
               </p>
