@@ -98,6 +98,27 @@ const esportsCards: IconItem[] = [
   },
 ];
 
+const esportsFoundations: IconItem[] = [
+  {
+    title: "Structured Competition",
+    description:
+      "Esports gives gaming a professional layer with teams, rosters, tournaments, rankings, and repeat competition cycles.",
+    icon: Swords,
+  },
+  {
+    title: "Always-On Media",
+    description:
+      "The audience follows matches, highlights, live streams, creator content, and social storytelling beyond a single event day.",
+    icon: MonitorPlay,
+  },
+  {
+    title: "Community Culture",
+    description:
+      "Fans participate in live chat, social reactions, shared clips, and community identity around the teams and games they follow.",
+    icon: Users,
+  },
+];
+
 const brandReasons: IconItem[] = [
   {
     title: "Highly Engaged Audience",
@@ -394,7 +415,7 @@ function SectionHeader({
 }: {
   eyebrow: string;
   title: string;
-  description: string;
+  description?: string;
 }) {
   return (
     <motion.div
@@ -408,7 +429,9 @@ function SectionHeader({
       <h2 className="mt-4 font-display text-4xl font-black uppercase tracking-tight text-white md:text-5xl">
         {title}
       </h2>
-      <p className="mt-4 text-base leading-relaxed text-white/42 md:text-lg">{description}</p>
+      {description ? (
+        <p className="mt-4 text-base leading-relaxed text-white/42 md:text-lg">{description}</p>
+      ) : null}
     </motion.div>
   );
 }
@@ -550,7 +573,48 @@ export default function Partners() {
           description="Esports is the professional side of video gaming, where individual players and teams compete in organized tournaments similar to traditional sports. It combines competition, entertainment, media, live streaming, and community into a format that people actively follow."
         />
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45 }}
+          viewport={{ once: true }}
+          className="mt-12 overflow-hidden rounded-[2rem] border border-white/[0.08] bg-white/[0.03]"
+        >
+          <div className="grid gap-0 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
+            <div className="relative overflow-hidden p-8 md:p-10">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(124,58,237,0.14),transparent_58%)]" />
+              <div className="relative z-10">
+                <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-primary/80">In Simple Terms</p>
+                <h3 className="mt-4 max-w-2xl font-display text-3xl font-black uppercase tracking-tight text-white md:text-4xl">
+                  Esports turns gaming into an organized entertainment and competition ecosystem.
+                </h3>
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/42 md:text-lg">
+                  Like traditional sports, it brings together professional teams, scheduled tournaments, live broadcasts, creator personalities, and fan communities that follow the scene year-round.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-px bg-white/[0.06] lg:grid-cols-1">
+              {esportsFoundations.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <div key={item.title} className="bg-[#0d0d14]/92 p-6">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-primary">
+                      <Icon size={18} />
+                    </div>
+                    <h4 className="mt-4 font-display text-xl font-black uppercase tracking-tight text-white">
+                      {item.title}
+                    </h4>
+                    <p className="mt-3 text-sm leading-relaxed text-white/40">{item.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </motion.div>
+
+        <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {esportsCards.map((card, index) => (
             <GlassCard key={card.title} {...card} index={index} />
           ))}
@@ -634,7 +698,6 @@ export default function Partners() {
           <SectionHeader
             eyebrow="Our Achievements"
             title="Competitive Results That Give The Brand Real Context"
-            description="The proposal already documents performance across multiple titles. The results below are presented from the proposal data, organized by game for faster scanning."
           />
 
           <motion.div
@@ -700,8 +763,8 @@ export default function Partners() {
       <section className="container mx-auto px-4 py-24 md:px-6">
         <SectionHeader
           eyebrow="Esports In Numbers"
-          title="Verified Reach From The Proposal Data"
-          description="These numbers are taken directly from the proposal. They describe the scale of the Egyptian gaming market and the visibility surrounding NG's competitive and content activity."
+          title="Verified Reach From Official Sources"
+          description="These figures are compiled in the proposal from government market reporting, official event attendance figures, and official platform analytics tied to NG's competitive and content activity."
         />
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
@@ -711,7 +774,7 @@ export default function Partners() {
         </div>
 
         <p className="mt-5 text-sm text-white/32">
-          Data source channels: Twitch / Kick / Youtube / Instagram / Facebook / Tiktok
+          Source mix: Government reporting, official event figures, and official platform analytics across Twitch / Kick / Youtube / Instagram / Facebook / Tiktok
         </p>
       </section>
 
