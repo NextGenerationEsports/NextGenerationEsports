@@ -8,6 +8,10 @@ import { assetPath } from "@/lib/utils";
 //       Change the img src to swap the loading logo.
 // ──────────────────────────────────────────────────────────────────────────────
 export function LoadingScreen() {
+  if (import.meta.env.DEV) {
+    return null;
+  }
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

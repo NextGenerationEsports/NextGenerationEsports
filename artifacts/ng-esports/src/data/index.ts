@@ -310,12 +310,12 @@ export const storeItems: StoreItem[] = [
     description:
       "Cotton + polyester construction with high-quality heat transfer printing across the featured design.",
     accent: "#8B5CF6",
-    cardImage: assetPath("store/ng-hoodie-overview.png"),
-    cardHoverImage: assetPath("store/ng-hoodie-front.jpg"),
+    cardImage: assetPath("store/ng-hoodie-front.png"),
+    cardHoverImage: assetPath("store/ng-hoodie-back.png"),
     gallery: [
+      { src: assetPath("store/ng-hoodie-front.png"), alt: "NG Stealth Hoodie front angle" },
+      { src: assetPath("store/ng-hoodie-back.png"), alt: "NG Stealth Hoodie back artwork" },
       { src: assetPath("store/ng-hoodie-overview.png"), alt: "NG Stealth Hoodie front and back overview" },
-      { src: assetPath("store/ng-hoodie-front.jpg"), alt: "NG Stealth Hoodie front angle" },
-      { src: assetPath("store/ng-hoodie-back.jpg"), alt: "NG Stealth Hoodie back artwork" },
     ],
     materials: ["Cotton", "Polyester"],
     printMethod: "High-quality heat transfer printing",
@@ -352,10 +352,10 @@ export const storeItems: StoreItem[] = [
     description:
       "Built around a consistent, durable, and stable surface that enhances precision and tracking.",
     accent: "#C084FC",
-    cardImage: assetPath("store/ng-mousepad-topography-black.jpg"),
+    cardImage: assetPath("store/ng-mousepad-topography-black.png"),
     cardHoverImage: assetPath("store/ng-mousepad-topography-white.png"),
     gallery: [
-      { src: assetPath("store/ng-mousepad-topography-black.jpg"), alt: "NG Topography Mousepad in black" },
+      { src: assetPath("store/ng-mousepad-topography-black.png"), alt: "NG Topography Mousepad in black" },
       { src: assetPath("store/ng-mousepad-topography-white.png"), alt: "NG Topography Mousepad in white" },
     ],
     colors: [
@@ -385,11 +385,10 @@ export const storeItems: StoreItem[] = [
     description:
       "Built around a consistent, durable, and stable surface that enhances precision and tracking.",
     accent: "#7C3AED",
-    cardImage: assetPath("store/ng-mousepad-signature-black.jpg"),
-    cardHoverImage: assetPath("store/ng-mousepad-signature-detail.jpg"),
+    cardImage: assetPath("store/ng-mousepad-signature-black.png"),
+    cardHoverImage: assetPath("store/ng-mousepad-signature-black.png"),
     gallery: [
-      { src: assetPath("store/ng-mousepad-signature-black.jpg"), alt: "NG Signature Mousepad primary view" },
-      { src: assetPath("store/ng-mousepad-signature-detail.jpg"), alt: "NG Signature Mousepad alternate detail view" },
+      { src: assetPath("store/ng-mousepad-signature-black.png"), alt: "NG Signature Mousepad primary view" },
     ],
     colors: [{ label: "Black", available: true, swatch: "#111111" }],
     specs: [

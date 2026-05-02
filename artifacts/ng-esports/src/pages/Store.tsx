@@ -24,8 +24,7 @@ export default function Store() {
               NG Store
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              Apparel and desk gear built to match the same premium esports identity as the rest of the site.
-              Click any product to open a full product page with gallery, details, and animated inspection.
+              Premium NG apparel and desk gear built to level up your fit, your setup, and your everyday grind.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
