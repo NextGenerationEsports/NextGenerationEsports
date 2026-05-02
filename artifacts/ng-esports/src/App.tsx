@@ -19,6 +19,7 @@ import News from "@/pages/News";
 import Links from "@/pages/Links";
 import Partners from "@/pages/Partners";
 import Store from "@/pages/Store";
+import StoreProduct from "@/pages/StoreProduct";
 import Nimbus from "@/pages/Nimbus";
 import NotFound from "@/pages/not-found";
 
@@ -53,6 +54,7 @@ function Router() {
           <Route path="/news" component={News} />
           <Route path="/links" component={Links} />
           <Route path="/partners" component={Partners} />
+          <Route path="/store/:slug" component={StoreProduct} />
           <Route path="/store" component={Store} />
           {/* Nimbus — fan hub / upcoming feature. Not in the main nav yet. */}
           <Route path="/nimbus" component={Nimbus} />

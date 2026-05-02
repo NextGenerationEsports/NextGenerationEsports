@@ -262,9 +262,145 @@ export const news = [
 // EDIT: Add or update merchandise. Set comingSoon: false and add a price/link
 //       when the store goes live.
 // ──────────────────────────────────────────────────────────────────────────────
-export const storeItems = [
-  { id: "store-1", name: "NG Pro Jersey 2026", category: "Apparel", comingSoon: true },
-  { id: "store-2", name: "NG Stealth Hoodie", category: "Apparel", comingSoon: true },
-  { id: "store-3", name: "NG Mousepad XL", category: "Accessories", comingSoon: true },
-  { id: "store-4", name: "Signed Player Merch", category: "Collectibles", comingSoon: true },
+export type StoreImage = {
+  src: string;
+  alt: string;
+};
+
+export type StoreOption = {
+  label: string;
+  available: boolean;
+  swatch?: string;
+  note?: string;
+};
+
+export type StoreItem = {
+  id: string;
+  slug: string;
+  name: string;
+  category: string;
+  badge: string;
+  status: string;
+  priceEgp: number;
+  summary: string;
+  description: string;
+  accent: string;
+  cardImage: string;
+  cardHoverImage: string;
+  gallery: StoreImage[];
+  materials?: string[];
+  printMethod?: string;
+  sizes?: StoreOption[];
+  colors?: StoreOption[];
+  specs: string[];
+  featureBullets: string[];
+  availabilityNote?: string;
+};
+
+export const storeItems: StoreItem[] = [
+  {
+    id: "store-hoodie",
+    slug: "ng-stealth-hoodie",
+    name: "NG Stealth Hoodie",
+    category: "Apparel",
+    badge: "Featured Drop",
+    status: "All Sizes Unavailable",
+    priceEgp: 550,
+    summary: "A heavyweight NG hoodie with front-and-back artwork built for everyday wear and clean esports styling.",
+    description:
+      "Cotton + polyester construction with high-quality heat transfer printing across the featured design.",
+    accent: "#8B5CF6",
+    cardImage: assetPath("store/ng-hoodie-overview.png"),
+    cardHoverImage: assetPath("store/ng-hoodie-front.jpg"),
+    gallery: [
+      { src: assetPath("store/ng-hoodie-overview.png"), alt: "NG Stealth Hoodie front and back overview" },
+      { src: assetPath("store/ng-hoodie-front.jpg"), alt: "NG Stealth Hoodie front angle" },
+      { src: assetPath("store/ng-hoodie-back.jpg"), alt: "NG Stealth Hoodie back artwork" },
+    ],
+    materials: ["Cotton", "Polyester"],
+    printMethod: "High-quality heat transfer printing",
+    sizes: [
+      { label: "S", available: false, note: "Unavailable" },
+      { label: "M", available: false, note: "Unavailable" },
+      { label: "L", available: false, note: "Unavailable" },
+      { label: "XL", available: false, note: "Unavailable" },
+      { label: "XXL", available: false, note: "Unavailable" },
+      { label: "XXXL", available: false, note: "Unavailable" },
+    ],
+    colors: [{ label: "Black", available: true, swatch: "#0A0A0F" }],
+    specs: [
+      "Cotton + polyester blend",
+      "High-quality heat transfer printing",
+      "Front and back graphic layout",
+    ],
+    featureBullets: [
+      "Premium black hoodie silhouette with NG front branding.",
+      "Back graphic carries the full drop identity for a stronger streetwear look.",
+      "All listed sizes are currently unavailable.",
+    ],
+    availabilityNote: "S, M, L, XL, XXL, and XXXL are currently unavailable.",
+  },
+  {
+    id: "store-mousepad-topography",
+    slug: "ng-topography-mousepad",
+    name: "NG Topography Mousepad",
+    category: "Accessories",
+    badge: "Black / White Variants",
+    status: "Design Preview",
+    priceEgp: 650,
+    summary: "A topography-inspired mousepad design offered in black and white colorways.",
+    description:
+      "Built around a consistent, durable, and stable surface that enhances precision and tracking.",
+    accent: "#C084FC",
+    cardImage: assetPath("store/ng-mousepad-topography-black.jpg"),
+    cardHoverImage: assetPath("store/ng-mousepad-topography-white.png"),
+    gallery: [
+      { src: assetPath("store/ng-mousepad-topography-black.jpg"), alt: "NG Topography Mousepad in black" },
+      { src: assetPath("store/ng-mousepad-topography-white.png"), alt: "NG Topography Mousepad in white" },
+    ],
+    colors: [
+      { label: "Black", available: true, swatch: "#111111" },
+      { label: "White", available: true, swatch: "#F5F5F5" },
+    ],
+    specs: [
+      "Consistent surface",
+      "Durable construction",
+      "Stable base for precision and tracking",
+    ],
+    featureBullets: [
+      "Available in black and white for this design.",
+      "Created for cleaner tracking response and a steady feel under pressure.",
+      "Works as a statement desk piece while staying performance-focused.",
+    ],
+  },
+  {
+    id: "store-mousepad-signature",
+    slug: "ng-signature-mousepad",
+    name: "NG Signature Mousepad",
+    category: "Accessories",
+    badge: "Black Only",
+    status: "Design Preview",
+    priceEgp: 650,
+    summary: "A darker NG mousepad concept with a single black colorway and bold central artwork.",
+    description:
+      "Built around a consistent, durable, and stable surface that enhances precision and tracking.",
+    accent: "#7C3AED",
+    cardImage: assetPath("store/ng-mousepad-signature-black.jpg"),
+    cardHoverImage: assetPath("store/ng-mousepad-signature-detail.jpg"),
+    gallery: [
+      { src: assetPath("store/ng-mousepad-signature-black.jpg"), alt: "NG Signature Mousepad primary view" },
+      { src: assetPath("store/ng-mousepad-signature-detail.jpg"), alt: "NG Signature Mousepad alternate detail view" },
+    ],
+    colors: [{ label: "Black", available: true, swatch: "#111111" }],
+    specs: [
+      "Consistent surface",
+      "Durable construction",
+      "Stable base for precision and tracking",
+    ],
+    featureBullets: [
+      "This design is presented in a black-only variant.",
+      "Surface is tuned for steady glide and controlled tracking.",
+      "Pairs a cleaner dark desk setup with NG visual identity.",
+    ],
+  },
 ];

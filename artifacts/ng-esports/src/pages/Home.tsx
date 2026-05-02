@@ -77,12 +77,12 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-4xl md:text-5xl uppercase tracking-tight mb-4">Official Gear</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">Rep the squad. High-performance apparel dropping soon.</p>
+            <p className="text-muted-foreground max-w-xl mx-auto">Explore the current NG hoodie and mousepad lineup with dedicated product pages.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {storeItems.slice(0, 3).map((item, index) => (
-              <StoreCard key={item.id} {...item} index={index} />
+              <StoreCard key={item.id} item={item} index={index} />
             ))}
           </div>
         </div>
